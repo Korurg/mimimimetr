@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Vote</title>
+</head>
+<body>
+<div th:if="${error}!=null">
+    <table>
+        <tr>
+            <td>
+                <span th:text="${error}" style="color: red"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <form action="/index">
+                    <button>Назад на главную</button>
+                </form>
+            </td>
+        </tr>
+    </table>
+</div>
+<div th:if="${error}==null">
+    <table>
+        <tr>
+            <td>
+                <table>
+                    <form action="/vote" method="post">
+                        <tr>
+                            <td>
+                                <input type="image" th:src="${firstCat.imageUrl}" width="130px" height="130px" onerror="this.onerror=null;this.src='https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg';">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="hidden" name="catId" th:value="${firstCat.id}">
+                                <input type="submit" th:value="${firstCat.name}"/>
+                            </td>
+                        </tr>
+                    </form>
+                </table>
+            </td>
+            <td>
+                <table>
+                    <form action="/vote" method="post">
+                        <tr>
+                            <td>
+                                <input type="image" th:src="${secondCat.imageUrl}" width="130px" height="130px">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="hidden" name="catId" th:value="${secondCat.id}">
+                                <input type="submit" th:value="${secondCat.name}"/>
+                            </td>
+                        </tr>
+                    </form>
+                </table>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

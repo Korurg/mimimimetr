@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload cat</title>
+</head>
+<body>
+<h1>Загрузите своего котика</h1>
+<form action="/upload" method="post">
+    <table>
+        <tr>
+            <td>
+                <span>Кличка любимца</span>
+            </td>
+            <td>
+                <input type="text" required="required" name="name">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span>Ссылка на фотографию</span>
+            </td>
+            <td>
+                <input type="text" required="required" name="imageUrl">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Загрузить">
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

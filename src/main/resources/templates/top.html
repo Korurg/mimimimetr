@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Top 10</title>
+</head>
+<body>
+
+<div>
+    <h1>Мимимиметр</h1>
+    <h2>Топ 10</h2>
+    <table>
+        <tr th:each="cat,iter : ${cats}">
+            <td>
+                <table>
+                    <tr>
+
+                        <td style="width: 60px;">
+                            <div style="text-align: center;">
+                                <span th:text="${iter.index}+1"></span>
+                            </div>
+                        </td>
+                        <td>
+                            <img th:src="${cat.imageUrl}" width="130px" height="130px" onerror="this.onerror=null;this.src='https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg';"/>
+                        </td>
+                        <td>
+                            <div style="text-align: left;">
+                                <span th:text="${cat.name}"></span>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
