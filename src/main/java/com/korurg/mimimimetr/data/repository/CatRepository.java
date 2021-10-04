@@ -19,6 +19,6 @@ public interface CatRepository extends JpaRepository<CatEntity, Long> {
     @Query(value = "update cat set score = score+1 where id=:id", nativeQuery = true)
     void incrementRating(@Param("id") long catId);
 
-    @Query(value = "select * from cat where id not in (:cats) or :cats is null limit 2", nativeQuery = true)
+    @Query(value = "select * from cat where id not in (:cats) or :cats is null order by random() limit 2", nativeQuery = true)
     List<CatEntity> getNewPairs(@Param("cats") List<Long> showedCats);
 }
