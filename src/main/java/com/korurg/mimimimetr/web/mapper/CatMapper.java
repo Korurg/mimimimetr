@@ -4,8 +4,6 @@ import com.korurg.mimimimetr.data.entity.CatEntity;
 import com.korurg.mimimimetr.web.dto.CatDto;
 import org.springframework.stereotype.Component;
 
-import java.util.stream.Stream;
-
 @Component
 public class CatMapper {
 
